@@ -52,10 +52,6 @@ var matcherModel  = {
     Card: function( id, value ){
         this.id = id;
         this.value = value;
-
-        this.matches = function( otherCard ) {
-            return this.value === otherCard.value;
-        }
     },
 
     sameCard: function(id){
@@ -74,11 +70,8 @@ var matcherModel  = {
     },
 
     checkGuess: function(id){
-
         this.numGuesses++;
-        var thisCard = this.getCard(id)
-        var correct = false;
-        if (this.selectedCard) correct = this.selectedCard.matches( thisCard );
+        var correct = this.selectedCard.value === this.getCard(id).value;
 
         if( correct ) this.matchedCards += 2;
          this.selectedCard = null;
@@ -88,8 +81,6 @@ var matcherModel  = {
          }
 
          return correct;
-
-        // return this.selectedCard.value === this.getCard(id).value;
     },
 
 };
