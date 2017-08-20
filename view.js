@@ -11,6 +11,11 @@ matcherView = {
         $('.card').css({
             width: width + "%"
         });
+
+        $('.card').click( function(e){
+            matcherController.selectCard( $(this).data('card-id') );
+        });
+
     },
 
     updateGameView: function() {
@@ -29,7 +34,20 @@ matcherView = {
             $cardDiv.attr('id', 'card-' + card.id);
             this.$grid.append( $cardDiv );
         }
-
     },
+
+    revealCard: function( id ){
+        $('#card-' + id).addClass('revealed');
+    },
+
+    setCorrect: function(id) {
+        $('#card-' + id).off('click');
+        $('#card-' + id).addClass('correct');
+    },
+
+    hideCards: function(){
+        $('.card').not('.correct').removeClass('revealed');
+    }
+
 };
 

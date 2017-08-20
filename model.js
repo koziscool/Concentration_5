@@ -9,6 +9,7 @@ var matcherModel  = {
     numGuesses: 0,
     gameStateText: "You haven't won yet, keep going.",
     matchedCards: 0,
+    selectedCard: null,
 
     init: function( size ) {
         this.size = size || this.size;
@@ -57,5 +58,38 @@ var matcherModel  = {
         }
     },
 
+    sameCard: function(id){
+        return this.selectedCard && this.selectedCard.id === id;
+    },
+
+    getCard: function(id) {
+        for ( var index in this.cards ){
+            if ( this.cards[index].id === id ) return this.cards[index];
+        }
+        return null;
+    },
+
+    setSelectedCard: function(id){
+        this.selectedCard =  this.getCard(id);
+    },
+
+    checkGuess: function(id){
+
+        this.numGuesses++;
+        var thisCard = this.getCard(id)
+        var correct = false;
+        if (this.selectedCard) correct = this.selectedCard.matches( thisCard );
+
+        if( correct ) this.matchedCards += 2;
+         this.selectedCard = null;
+
+         if( this.matchedCards === this.totalCards ) {
+            this.gameStateText = "Congratulations, you win."
+         }
+
+         return correct;
+
+        // return this.selectedCard.value === this.getCard(id).value;
+    },
 
 };

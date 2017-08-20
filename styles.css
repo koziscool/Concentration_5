@@ -39,9 +39,27 @@
     text-align: center;
     border: 1px solid black;
     box-sizing: border-box;
-    margin: 1%
+    margin: 1%;
+    transition: all 0.5s;
+    transform: rotateY(180deg);
 }
 
 .name {
-    transform: translateY(60%);
+    font-size: large;
+    transition: all 0.5s;
+    backface-visibility: hidden;
+    transform: translateY(60%) rotateY(180deg);
+}
+
+.revealed {
+    transform: rotate(0deg);
+}
+
+.revealed .name{
+  transform: translateY(60%) rotateY(0deg);
+}
+
+.correct{
+    border-color: darkgreen;
+    background-color: lime;
 }
