@@ -1,0 +1,41 @@
+
+.game-info-container {
+    display: block;
+    height: 70px;
+    margin 0 0 10px 0;
+    background-color: gray;
+}
+
+.section {
+    display: inline-block;
+    text-align: center;
+    width: 25%;
+    position: relative;
+    top: 10px;
+    color: #ddd;
+    float: left;
+}
+
+.form-container{ 
+    text-align: center;
+    margin: 0 auto;
+ }
+
+.grid-container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.card {
+    height: 50px;
+    display: inline-block;
+    background-color: lightyellow;
+    text-align: center;
+    border: 1px solid black;
+    box-sizing: border-box;
+    margin: 1%
+}
+
+.name {
+    transform: translateY(60%);
+}
