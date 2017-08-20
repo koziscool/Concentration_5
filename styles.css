@@ -1,7 +1,7 @@
 
 .game-info-container {
     display: block;
-    height: 70px;
+    height: 60px;
     margin 0 0 10px 0;
     background-color: gray;
 }
@@ -14,6 +14,12 @@
     top: 10px;
     color: #ddd;
     float: left;
+}
+
+.section div {
+    display: inline;
+    font-weight: bold;
+    color: white;
 }
 
 .form-container{ 

@@ -6,6 +6,9 @@ var matcherModel  = {
     cards: [],
     totalCards: 0,
     currentId: 1,
+    numGuesses: 0,
+    gameStateText: "You haven't won yet, keep going.",
+    matchedCards: 0,
 
     init: function( size ) {
         this.size = size || this.size;
